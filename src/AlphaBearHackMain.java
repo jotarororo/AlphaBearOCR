@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
+// AlphaBearHackMain takes a screenshot of AlphaBear and perfrom image processing to get produce
+//     available words in the screenshot 
 public class AlphaBearHackMain {
 
 	private static int dataColor = -2295585;
@@ -43,6 +45,7 @@ public class AlphaBearHackMain {
 	    System.out.println("Execution time: " + elapsedTime + "ms");
 	}
 
+	// Perform binarization on the input BufferedImage based on the dataColor
 	public static void binarize(BufferedImage img, int dataColor){
 		for(int i=0; i<img.getWidth(); i++) {
             for(int j=0; j<img.getHeight(); j++) {
@@ -55,11 +58,13 @@ public class AlphaBearHackMain {
 		}
 	}
 	
+	//Takes a BufferedImage and the title of the output file name, and write PNG image to that file
 	public static void outputImage(BufferedImage croped, String title) throws IOException{
 		File outputfile = new File(title + ".png");
 	    ImageIO.write(croped, "png", outputfile);
 	}
 	
+	// Takes a list of String, and print the first five elements in there
 	public static void displayFirstFive(ArrayList<String> results){
 		System.out.print("[");
 		if(results.size() > 5){

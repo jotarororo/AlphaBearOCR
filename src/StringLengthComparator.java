@@ -1,8 +1,10 @@
-public class MyComparator implements java.util.Comparator<String> {
+// A comparator that sorts String by their length, longer length come first
+public class StringLengthComparator implements java.util.Comparator<String> {
 
     private int referenceLength;
 
-    public MyComparator(String reference) {
+    // Construct MyComapartor based on string's length
+    public StringLengthComparator(String reference) {
         super();
         this.referenceLength = reference.length();
     }
